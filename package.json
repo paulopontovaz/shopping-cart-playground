@@ -1,0 +1,13 @@
+{
+    "devDependencies": {
+        "@biomejs/biome": "^2.0.6",
+        "@types/bun": "latest"
+    },
+    "module": "index.ts",
+    "name": "haiilo-challenge",
+    "peerDependencies": {
+        "typescript": "^5"
+    },
+    "private": true,
+    "type": "module"
+}
