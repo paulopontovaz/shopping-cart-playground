@@ -10,7 +10,8 @@
     "editor.codeActionsOnSave": {
       "source.addMissingImports": "explicit",
       "source.fixAll": "explicit",
-      "source.removeUnusedImports": "explicit"
+      "source.removeUnusedImports": "explicit",
+      "source.sortImports": "explicit"
     }
   },
   "[json][jsonc][html][dockercompose]": {
