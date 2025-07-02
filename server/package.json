@@ -1,8 +1,13 @@
 {
+    "name": "haiilo-challenge-api",
+    "scripts": {
+        "dev": "NODE_ENV=dev bun run --hot ./index.ts",
+        "generate": "drizzle-kit generate",
+        "migrate": "drizzle-kit migrate"
+    },
     "dependencies": {
         "dotenv": "^17.0.0",
         "drizzle-orm": "^0.44.2",
-        "drizzle-seed": "^0.3.1",
         "hono": "^4.8.3",
         "pg": "^8.16.3"
     },
@@ -13,10 +18,8 @@
         "tsx": "^4.20.3"
     },
     "module": "./index.ts",
-    "name": "haiilo-challenge-api",
     "peerDependencies": {
         "typescript": "^5"
     },
-    "private": true,
     "type": "module"
 }

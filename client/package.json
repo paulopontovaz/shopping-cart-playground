@@ -1,4 +1,14 @@
 {
+    "name": "haillo-challenge-ui",
+    "private": true,
+    "scripts": {
+        "build": "tsc && vite build",
+        "dev": "NODE_ENV=dev vite",
+        "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+        "preview": "vite preview"
+    },
+    "type": "module",
+    "version": "0.0.0",
     "dependencies": {
         "@radix-ui/react-slot": "^1.2.3",
         "@tailwindcss/vite": "^4.1.11",
@@ -17,15 +27,5 @@
         "@vitejs/plugin-react": "^4.2.1",
         "typescript": "^5.2.2",
         "vite": "^5.2.0"
-    },
-    "name": "haillo-challenge-ui",
-    "private": true,
-    "scripts": {
-        "build": "tsc && vite build",
-        "dev": "vite",
-        "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-        "preview": "vite preview"
-    },
-    "type": "module",
-    "version": "0.0.0"
+    }
 }
