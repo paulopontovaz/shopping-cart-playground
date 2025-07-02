@@ -1,5 +1,5 @@
 {
-  "id": "cc4026c3-b1ad-4757-bd88-e49e3a4f75ab",
+  "id": "8dd6dc05-a805-4930-ad21-8f59a5d966a6",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "version": "7",
   "dialect": "postgresql",
@@ -26,6 +26,18 @@
           "type": "real",
           "primaryKey": false,
           "notNull": true
+        },
+        "offer_quantity": {
+          "name": "offer_quantity",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "offer_price": {
+          "name": "offer_price",
+          "type": "real",
+          "primaryKey": false,
+          "notNull": false
         }
       },
       "indexes": {},
@@ -37,71 +49,14 @@
         "positive_price": {
           "name": "positive_price",
           "value": "\"product\".\"price\" > 0"
-        }
-      },
-      "isRLSEnabled": false
-    },
-    "public.special_offer": {
-      "name": "special_offer",
-      "schema": "",
-      "columns": {
-        "id": {
-          "name": "id",
-          "type": "uuid",
-          "primaryKey": true,
-          "notNull": true,
-          "default": "gen_random_uuid()"
         },
-        "quantity": {
-          "name": "quantity",
-          "type": "integer",
-          "primaryKey": false,
-          "notNull": true
+        "positive_offer_price": {
+          "name": "positive_offer_price",
+          "value": "\"product\".\"offer_price\" > 0"
         },
-        "price": {
-          "name": "price",
-          "type": "real",
-          "primaryKey": false,
-          "notNull": true
-        },
-        "product_id": {
-          "name": "product_id",
-          "type": "uuid",
-          "primaryKey": false,
-          "notNull": true
-        }
-      },
-      "indexes": {},
-      "foreignKeys": {
-        "special_offer_product_id_product_id_fk": {
-          "name": "special_offer_product_id_product_id_fk",
-          "tableFrom": "special_offer",
-          "tableTo": "product",
-          "columnsFrom": [
-            "product_id"
-          ],
-          "columnsTo": [
-            "id"
-          ],
-          "onDelete": "cascade",
-          "onUpdate": "no action"
-        }
-      },
-      "compositePrimaryKeys": {},
-      "uniqueConstraints": {},
-      "policies": {},
-      "checkConstraints": {
-        "positive_price": {
-          "name": "positive_price",
-          "value": "\"special_offer\".\"price\" > 0"
-        },
-        "positive_quantity": {
-          "name": "positive_quantity",
-          "value": "\"special_offer\".\"quantity\" > 0"
-        },
-        "limit_quantity": {
-          "name": "limit_quantity",
-          "value": "\"special_offer\".\"quantity\" < 10"
+        "positive_offer_quantity": {
+          "name": "positive_offer_quantity",
+          "value": "\"product\".\"offer_quantity\" > 0"
         }
       },
       "isRLSEnabled": false

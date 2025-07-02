@@ -1,6 +1,1 @@
-export {
-  product,
-  productRelations,
-  specialOffer,
-  specialOfferRelations,
-} from "./schema";
+export { product } from "./schema";
