@@ -34,3 +34,4 @@ Here are my first thoughts on how the app could improve further:
 - Add product images;
 - Make the UI more similar to other e-commerce apps by, for example, having a product page, a search bar, having more products in the database.
 - Move the shopping cart to its own page or widget
+- Refactor BackOffice.tsx to remove the confirm-delete and product edit dialogs from there. Move the logic closer to ProductTable.tsx and possibly into custom hooks.
