@@ -1,4 +1,4 @@
-import { PencilIcon } from "lucide-react";
+import { PencilIcon, TrashIcon } from "lucide-react";
 import { useGetAllProducts } from "~/api/products/useGetAllProducts";
 import { Button } from "~/components/_common/ui/button";
 import {
@@ -14,10 +14,12 @@ import type { Product } from "../../../../server/src/db/models/schema";
 
 type ProductTableProps = {
   onEditClick: (product: Product) => void;
+  onConfirmDeleteClick: (product: Product) => void;
 };
 
 export const ProductTable = (props: ProductTableProps) => {
-  const { onEditClick } = props;
+  const { onEditClick, onConfirmDeleteClick } = props;
+
   const { productList } = useGetAllProducts();
 
   return (
@@ -28,7 +30,7 @@ export const ProductTable = (props: ProductTableProps) => {
           <TableHead className="w-[5rem]">Price</TableHead>
           <TableHead>Offer Quantity</TableHead>
           <TableHead>Offer Price with Discount</TableHead>
-          <TableHead>Edit</TableHead>
+          <TableHead>Actions</TableHead>
         </TableRow>
       </TableHeader>
       <TableBody>
@@ -41,8 +43,19 @@ export const ProductTable = (props: ProductTableProps) => {
               <TableCell>{getFormattedPrice(price)}</TableCell>
               <TableCell>{offerQuantity ?? "-"}</TableCell>
               <TableCell>{getFormattedPrice(offerPrice)}</TableCell>
-              <TableCell>
-                <Button onClick={() => onEditClick(product)}>
+              <TableCell className="flex gap-2">
+                <Button
+                  className="text-red-500 hover:bg-red-100 hover:text-red-500"
+                  onClick={() => onConfirmDeleteClick(product)}
+                  variant="outline"
+                >
+                  <TrashIcon />
+                </Button>
+                <Button
+                  className=" text-green-500 hover:bg-green-100 hover:text-green-500"
+                  onClick={() => onEditClick(product)}
+                  variant="outline"
+                >
                   <PencilIcon />
                 </Button>
               </TableCell>

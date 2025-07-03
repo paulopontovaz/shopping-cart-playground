@@ -19,16 +19,14 @@ type ProductFormProps = {
 
 export const ProductForm = (props: ProductFormProps) => {
   const { product, onAfterSubmit } = props;
-  const { onFormSubmit, productForm } = useProductForm({ product });
-
-  const handleFormSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
-    await onFormSubmit(event);
-    onAfterSubmit();
-  };
+  const { onFormSubmit, productForm } = useProductForm({
+    product,
+    onAfterSubmit,
+  });
 
   return (
     <Form {...productForm}>
-      <form className="flex flex-col gap-4" onSubmit={handleFormSubmit}>
+      <form className="flex flex-col gap-4" onSubmit={onFormSubmit}>
         <FormField
           control={productForm.control}
           name="name"
@@ -50,7 +48,7 @@ export const ProductForm = (props: ProductFormProps) => {
             <FormItem>
               <FormLabel>Base Price *</FormLabel>
               <FormControl>
-                <Input placeholder="9.99" type="number" {...field} />
+                <Input placeholder="9,99" type="number" {...field} />
               </FormControl>
               <FormDescription />
               <FormMessage />
@@ -81,7 +79,7 @@ export const ProductForm = (props: ProductFormProps) => {
             <FormItem>
               <FormLabel>Offer Price</FormLabel>
               <FormControl>
-                <Input placeholder="4.99" type="number" {...field} />
+                <Input placeholder="4,99" type="number" {...field} />
               </FormControl>
               <FormDescription>
                 If the user buys [Offer Quantity] of this product, they pay this
