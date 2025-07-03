@@ -4,7 +4,7 @@
     "components": "~/components/_common",
     "hooks": "~/components/_common/hooks",
     "lib": "~/components/_common/lib",
-    "ui": "~/components/_common/components/ui",
+    "ui": "~/components/_common/ui",
     "utils": "~/components/_common/lib/utils"
   },
   "iconLibrary": "lucide",
