@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import { api } from "~/api/apiClient";
+import { apiClient } from "~/api/apiClient";
 import type { Product } from "../../../../server/src/db/models/schema";
 
 export type FetchAllProductsResponse = {
@@ -7,7 +7,7 @@ export type FetchAllProductsResponse = {
 };
 
 export const fetchAllProductsRequest = async () => {
-  const response = (await api
+  const response = (await apiClient
     .get("products")
     .json()) as FetchAllProductsResponse;
 
