@@ -8,6 +8,11 @@ import {
   varchar,
 } from "drizzle-orm/pg-core";
 
+type EntityUpdate<E extends { id: string }> = Omit<
+  Partial<E> & Pick<E, "id">,
+  ""
+>;
+
 export const product = pgTable(
   "product",
   {
@@ -25,3 +30,5 @@ export const product = pgTable(
 );
 
 export type Product = typeof product.$inferSelect;
+export type ProductInsert = typeof product.$inferInsert;
+export type ProductUpdate = EntityUpdate<Product>;
