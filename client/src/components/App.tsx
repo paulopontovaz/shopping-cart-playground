@@ -16,6 +16,7 @@ export const App = () => {
                 className={({ isActive }) =>
                   `hover:underline hover:cursor-default ${isActive ? "font-bold" : ""}`
                 }
+                data-testid="home-link"
                 to="/"
               >
                 Home
@@ -26,6 +27,7 @@ export const App = () => {
                 className={({ isActive }) =>
                   `hover:underline hover:cursor-default ${isActive ? "font-bold" : ""}`
                 }
+                data-testid="back-office-link"
                 to="/back-office"
               >
                 Back Office
