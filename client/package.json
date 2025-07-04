@@ -1,41 +1,44 @@
 {
-    "name": "haillo-challenge-ui",
-    "private": true,
-    "scripts": {
-        "build": "tsc && vite build",
-        "dev": "NODE_ENV=dev vite",
-        "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-        "preview": "vite preview"
-    },
-    "type": "module",
-    "version": "0.0.0",
-    "dependencies": {
-        "@hookform/resolvers": "^5.1.1",
-        "@radix-ui/react-dialog": "^1.1.14",
-        "@radix-ui/react-label": "^2.1.7",
-        "@radix-ui/react-slot": "^1.2.3",
-        "@tailwindcss/vite": "^4.1.11",
-        "@tanstack/react-query": "^5.81.5",
-        "class-variance-authority": "^0.7.1",
-        "clsx": "^2.1.1",
-        "ky": "^1.8.1",
-        "lucide-react": "^0.525.0",
-        "react": "^18.2.0",
-        "react-dom": "^18.2.0",
-        "react-hook-form": "^7.59.0",
-        "react-router": "^7.6.3",
-        "react-router-dom": "^7.6.3",
-        "tailwind-merge": "^3.3.1",
-        "tailwindcss": "^4.1.11",
-        "tw-animate-css": "^1.3.4",
-        "zod": "^3.25.71",
-        "zustand": "^5.0.6"
-    },
-    "devDependencies": {
-        "@types/react": "^18.2.66",
-        "@types/react-dom": "^18.2.22",
-        "@vitejs/plugin-react": "^4.2.1",
-        "typescript": "^5.2.2",
-        "vite": "^5.2.0"
-    }
+  "name": "haillo-challenge-ui",
+  "private": true,
+  "scripts": {
+    "build": "tsc && vite build",
+    "dev": "NODE_ENV=dev vite",
+    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "vite preview",
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run"
+  },
+  "type": "module",
+  "version": "0.0.0",
+  "dependencies": {
+    "@hookform/resolvers": "^5.1.1",
+    "@radix-ui/react-dialog": "^1.1.14",
+    "@radix-ui/react-label": "^2.1.7",
+    "@radix-ui/react-slot": "^1.2.3",
+    "@tailwindcss/vite": "^4.1.11",
+    "@tanstack/react-query": "^5.81.5",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "ky": "^1.8.1",
+    "lucide-react": "^0.525.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-hook-form": "^7.59.0",
+    "react-router": "^7.6.3",
+    "react-router-dom": "^7.6.3",
+    "tailwind-merge": "^3.3.1",
+    "tailwindcss": "^4.1.11",
+    "tw-animate-css": "^1.3.4",
+    "zod": "^3.25.71",
+    "zustand": "^5.0.6"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.66",
+    "@types/react-dom": "^18.2.22",
+    "@vitejs/plugin-react": "^4.2.1",
+    "cypress": "^14.5.1",
+    "typescript": "^5.2.2",
+    "vite": "^5.2.0"
+  }
 }
