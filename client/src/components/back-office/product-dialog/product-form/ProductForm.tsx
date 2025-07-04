@@ -36,7 +36,6 @@ export const ProductForm = (props: ProductFormProps) => {
               <FormControl>
                 <Input placeholder="Butter" {...field} />
               </FormControl>
-              <FormDescription />
               <FormMessage />
             </FormItem>
           )}
@@ -50,7 +49,6 @@ export const ProductForm = (props: ProductFormProps) => {
               <FormControl>
                 <Input placeholder="9,99" type="number" {...field} />
               </FormControl>
-              <FormDescription />
               <FormMessage />
             </FormItem>
           )}
