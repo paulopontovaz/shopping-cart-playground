@@ -23,7 +23,7 @@ export const ProductTable = (props: ProductTableProps) => {
   const { productList } = useGetAllProducts();
 
   return (
-    <Table>
+    <Table data-testid="product-table">
       <TableHeader>
         <TableRow>
           <TableHead>Name</TableHead>
@@ -46,6 +46,7 @@ export const ProductTable = (props: ProductTableProps) => {
               <TableCell className="flex gap-2">
                 <Button
                   className="text-red-500 hover:bg-red-100 hover:text-red-500"
+                  data-testid="delete-product-button"
                   onClick={() => onConfirmDeleteClick(product)}
                   variant="outline"
                 >
@@ -53,6 +54,7 @@ export const ProductTable = (props: ProductTableProps) => {
                 </Button>
                 <Button
                   className=" text-green-500 hover:bg-green-100 hover:text-green-500"
+                  data-testid="edit-product-button"
                   onClick={() => onEditClick(product)}
                   variant="outline"
                 >

@@ -26,7 +26,11 @@ export const ProductForm = (props: ProductFormProps) => {
 
   return (
     <Form {...productForm}>
-      <form className="flex flex-col gap-4" onSubmit={onFormSubmit}>
+      <form
+        className="flex flex-col gap-4"
+        data-testid="product-form"
+        onSubmit={onFormSubmit}
+      >
         <FormField
           control={productForm.control}
           name="name"
@@ -34,7 +38,11 @@ export const ProductForm = (props: ProductFormProps) => {
             <FormItem>
               <FormLabel>Name/Description *</FormLabel>
               <FormControl>
-                <Input placeholder="Butter" {...field} />
+                <Input
+                  placeholder="Butter"
+                  {...field}
+                  data-testid="name-form-field"
+                />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -47,7 +55,13 @@ export const ProductForm = (props: ProductFormProps) => {
             <FormItem>
               <FormLabel>Base Price *</FormLabel>
               <FormControl>
-                <Input placeholder="9,99" type="number" {...field} />
+                <Input
+                  placeholder="9,99"
+                  step="0.01"
+                  type="number"
+                  {...field}
+                  data-testid="base-price-form-field"
+                />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -60,7 +74,13 @@ export const ProductForm = (props: ProductFormProps) => {
             <FormItem>
               <FormLabel>Offer Quantity</FormLabel>
               <FormControl>
-                <Input placeholder="3" step="1" type="number" {...field} />
+                <Input
+                  placeholder="3"
+                  step="1"
+                  type="number"
+                  {...field}
+                  data-testid="offer-quantity-form-field"
+                />
               </FormControl>
               <FormDescription>
                 If the user buys this quantity, they pay [Offer Price] instead
@@ -77,7 +97,13 @@ export const ProductForm = (props: ProductFormProps) => {
             <FormItem>
               <FormLabel>Offer Price</FormLabel>
               <FormControl>
-                <Input placeholder="4,99" type="number" {...field} />
+                <Input
+                  placeholder="4,99"
+                  step="0.01"
+                  type="number"
+                  {...field}
+                  data-testid="offer-price-form-field"
+                />
               </FormControl>
               <FormDescription>
                 If the user buys [Offer Quantity] of this product, they pay this
@@ -90,6 +116,7 @@ export const ProductForm = (props: ProductFormProps) => {
         <div className="flex justify-end">
           <Button
             className="bg-blue-600 hover:bg-blue-800 active:bg-blue-800 focus:bg-blue-800"
+            data-testid="form-submit-button"
             type="submit"
           >
             Submit

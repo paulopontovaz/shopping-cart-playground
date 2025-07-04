@@ -39,6 +39,7 @@ export const BackOffice = () => {
         <h2 className="text-2xl">Manage Products</h2>
         <Button
           className="bg-amber-500 hover:bg-amber-500/80 text-black hover:text-black/80"
+          data-testid="add-new-product-button"
           onClick={() => setIsProductDialogOpen(true)}
         >
           Add New Product

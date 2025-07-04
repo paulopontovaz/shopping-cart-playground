@@ -23,7 +23,7 @@ export const ConfirmDialog = (props: ConfirmDialogProps) => {
   return (
     <Dialog onOpenChange={onClose} open={isOpen}>
       <DialogOverlay />
-      <DialogContent data-testid="confirm-Dialog-content">
+      <DialogContent data-testid="confirm-dialog">
         <DialogHeader>
           <DialogTitle>{title}</DialogTitle>
           <DialogDescription hidden>{title}</DialogDescription>
@@ -32,10 +32,12 @@ export const ConfirmDialog = (props: ConfirmDialogProps) => {
         <p>{text}</p>
 
         <DialogFooter className="flex justify-end gap-3 w-full">
-          <Button onClick={onClose} variant="ghost">
+          <Button data-testid="cancel-button" onClick={onClose} variant="ghost">
             Close
           </Button>
-          <Button onClick={onConfirm}>Confirm</Button>
+          <Button data-testid="confirm-button" onClick={onConfirm}>
+            Confirm
+          </Button>
         </DialogFooter>
       </DialogContent>
     </Dialog>
