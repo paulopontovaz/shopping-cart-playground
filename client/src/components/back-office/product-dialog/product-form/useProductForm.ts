@@ -16,8 +16,14 @@ const productFormSchema = z.object({
       invalid_type_error: "Price must be a valid number",
     })
     .min(0.01, { message: "Price must be at least 0.01" }),
-  offerQuantity: z.coerce.number().min(0).int().step(1).optional(),
-  offerPrice: z.coerce.number().min(0).optional(),
+  offerQuantity: z.coerce.number().min(1).int().step(1).optional(),
+  offerPrice: z.coerce
+    .number({
+      required_error: "Offer Price is required",
+      invalid_type_error: "Offer Price must be a valid number",
+    })
+    .min(0.01, { message: "Offer Price must be at least 0.01" })
+    .optional(),
 });
 
 export type ProductFormSchema = z.infer<typeof productFormSchema>;
