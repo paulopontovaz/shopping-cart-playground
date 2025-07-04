@@ -34,7 +34,7 @@ run_docker() {
     docker compose up -d
 }
 
-run_local() {
+run_postgres() {
     docker compose stop
     docker compose rm -f
     docker compose up postgres -d
