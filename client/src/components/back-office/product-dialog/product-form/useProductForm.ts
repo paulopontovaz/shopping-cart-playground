@@ -10,7 +10,12 @@ const productFormSchema = z.object({
   name: z
     .string({ required_error: "Name is required" })
     .min(2, { message: "Name must be at least 2 characters" }),
-  price: z.coerce.number({ required_error: "Price is required" }).min(0),
+  price: z.coerce
+    .number({
+      required_error: "Price is required",
+      invalid_type_error: "Price must be a valid number",
+    })
+    .min(0.01, { message: "Price must be at least 0.01" }),
   offerQuantity: z.coerce.number().min(0).int().step(1).optional(),
   offerPrice: z.coerce.number().min(0).optional(),
 });
@@ -31,9 +36,9 @@ export const useProductForm = (options: UseProductFormOptions) => {
     resolver: zodResolver(productFormSchema),
     defaultValues: {
       name: product?.name ?? "",
-      ...(product?.price && { price: product?.price }),
-      ...(product?.offerQuantity && { offerQuantity: product?.offerQuantity }),
-      ...(product?.offerPrice && { offerPrice: product?.offerPrice }),
+      price: product?.price ?? 0,
+      offerPrice: product?.offerPrice ?? undefined,
+      offerQuantity: product?.offerQuantity ?? undefined,
     },
   });
 
